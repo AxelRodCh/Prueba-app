@@ -1,59 +1,110 @@
-# PruebaApp
+# 📋 Prueba Técnica – Desarrollador Fullstack (Angular + Node.js + MySQL)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.3.
+Este proyecto consiste en una aplicación Fullstack para la gestión de tareas por usuario. Permite registrar, autenticar y CRUD de tareas protegidas por JWT.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Tecnologías utilizadas
 
-```bash
-ng serve
-```
+- **Frontend:** Angular 12+ (TypeScript)
+- **Backend:** Node.js + Express
+- **Base de Datos:** MySQL
+- **Autenticación:** JWT
+- **ORM:** `mysql2`
+- **Seguridad:** Middleware de autenticación
+- **Documentación:** Este README 😄
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 🧱 Estructura del proyecto
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+project-root/
+├── frontend/ # Angular app
+│ └── src/app/
+│ ├── auth/
+│ ├── tasks/
+│ └── shared/
+├── backend/ # Node.js app
+│ ├── controllers/
+│ ├── routes/
+│ ├── middleware/
+│ ├── db.js
+│ └── server.js
+└── prueba-app.sql # Script para base de datos
 
-```bash
-ng generate component component-name
-```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## 📦 Requisitos previos
 
-## Building
+- Node.js 18+ y npm
+- Angular CLI (`npm install -g @angular/cli`)
+- MySQL Server
+- MySQL Workbench o consola
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## 🛠️ Configuración de la base de datos
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+1. Abre **MySQL Workbench** o terminal MySQL.
+2. Ejecuta el script `schema.sql` o este contenido:
 
-## Running unit tests
+```sql
+CREATE DATABASE IF NOT EXISTS prueba-app;
+USE prueba-app;
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+CREATE TABLE usuarios (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL
+);
 
-```bash
-ng test
-```
+CREATE TABLE tareas (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  titulo VARCHAR(100) NOT NULL,
+  descripcion TEXT,
+  estatus ENUM('pendiente', 'completado') DEFAULT 'pendiente',
+  id_usuario INT NOT NULL,
+  FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
+);
 
-## Running end-to-end tests
+Funcionalidades
+Backend (/auth, /tasks)
+POST /auth/register: Registro de usuario
 
-For end-to-end (e2e) testing, run:
+POST /auth/login: Devuelve token JWT
 
-```bash
-ng e2e
-```
+GET /tasks: Lista de tareas del usuario autenticado
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+POST /tasks: Crear tarea
 
-## Additional Resources
+PUT /tasks/:id: Editar tarea
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+DELETE /tasks/:id: Eliminar tarea
+
+Frontend
+Registro e inicio de sesión
+
+Lista de tareas (protección con JWT)
+
+Crear / Editar / Eliminar tareas
+
+Filtro opcional por estado
+
+Almacenamiento del token en localStorage
+
+✅ Estado del proyecto
+ Backend funcional con conexión a MySQL
+
+ Autenticación con JWT
+
+ Frontend Angular con formularios y rutas protegidas
+
+ CRUD de tareas
+
+ Interfaz básica y clara
+
+ Documentación incluida (tú estás aquí)
+
+ Desarrollado por Axel Andrés Rodríguez Chavarría para la prueba técnica de desarrollador

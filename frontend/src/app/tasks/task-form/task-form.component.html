@@ -1,0 +1,10 @@
+<h2>{{ isEdit ? 'Editar' : 'Nueva' }} Tarea</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <input type="text" formControlName="titulo" placeholder="Título" required />
+  <textarea formControlName="descripcion" placeholder="Descripción"></textarea>
+  <select formControlName="estatus">
+    <option value="pendiente">Pendiente</option>
+    <option value="completado">Completado</option>
+  </select>
+  <button type="submit">{{ isEdit ? 'Actualizar' : 'Crear' }}</button>
+</form>

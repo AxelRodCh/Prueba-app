@@ -1,0 +1,11 @@
+<h2>Mis tareas</h2>
+<a routerLink="/tasks/new">Crear nueva tarea</a>
+<ul>
+  <li *ngFor="let task of tasks">
+    <strong>{{ task.titulo }}</strong> - {{ task.estatus }}
+    <a [routerLink]="['/tasks/edit', task.id]">Editar</a>
+    <button (click)="deleteTask(task.id!)">Eliminar</button>
+  </li>
+</ul>
+
+<a routerLink="/login" (click)="logout()">Cerrar sesión</a>
