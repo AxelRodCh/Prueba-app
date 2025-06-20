@@ -1,4 +1,4 @@
-# 📋 Prueba Técnica – Desarrollador Fullstack (Angular + Node.js + MySQL)
+# Prueba Técnica – Desarrollador Fullstack (Angular + Node.js + MySQL)
 
 Este proyecto consiste en una aplicación Fullstack para la gestión de tareas por usuario. Permite registrar, autenticar y CRUD de tareas protegidas por JWT.
 
