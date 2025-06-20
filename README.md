@@ -4,7 +4,7 @@ Este proyecto consiste en una aplicación Fullstack para la gestión de tareas p
 
 ---
 
-## 🚀 Tecnologías utilizadas
+## Tecnologías utilizadas
 
 - **Frontend:** Angular 12+ (TypeScript)
 - **Backend:** Node.js + Express
@@ -16,7 +16,7 @@ Este proyecto consiste en una aplicación Fullstack para la gestión de tareas p
 
 ---
 
-## 🧱 Estructura del proyecto
+## Estructura del proyecto
 
 project-root/
 ├── frontend/ # Angular app
@@ -35,7 +35,7 @@ project-root/
 
 ---
 
-## 📦 Requisitos previos
+## Requisitos previos
 
 - Node.js 18+ y npm
 - Angular CLI (`npm install -g @angular/cli`)
@@ -44,7 +44,7 @@ project-root/
 
 ---
 
-## 🛠️ Configuración de la base de datos
+## Configuración de la base de datos
 
 1. Abre **MySQL Workbench** o terminal MySQL.
 2. Ejecuta el script `schema.sql` o este contenido:
